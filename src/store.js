@@ -8,7 +8,9 @@ const middleware = [thunk];
 
 const store = createStore(
     rootReducer, 
-    initialState, 
+    initialState,
+    // Redux Devtools is an extension for your browser
+    // https://github.com/zalmoxisus/redux-devtools-extension
     compose(
         applyMiddleware(...middleware),
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

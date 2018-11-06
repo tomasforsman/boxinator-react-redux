@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { newShipment} from '../actions/postActions';
+import { Redirect } from 'react-router'
 
 class NewShipment extends Component {
 
@@ -12,9 +13,10 @@ class NewShipment extends Component {
 
     render() {
         return (
-            <div></div>
+            <div>
+                <Redirect to="/addbox"/>
+            </div>
         )
-
     }
 }
         const mapStateToProps = state => ({

@@ -10,29 +10,26 @@ class Posts extends Component {
        this.props.fetchShipment();
    }
 
-   roundNumber(numb){
-       if(Math.round(numb) === numb) {
-           return Math.round(numb);
-       }else{
-           return numb;
-       }
+   // Removes decimals if not needed.
+   static roundNumber(numb){
+       return Math.round(numb) == numb ? Math.round(numb) : numb;
    }
-  render() {
+    render() {
 
     const postItems = this.props.posts.map(post => (
         <tr key={post.id_package}>
             <td className="table-post">{post.name}</td>
-            <td className="table-post">{this.roundNumber(post.weight)} Kg</td>
+            <td className="table-post">{Posts.roundNumber(post.weight)} Kg</td>
             <td className="table-post" style={{ background: `rgb(${post.red},${post.green},${post.blue})`}}><div>&nbsp;</div></td>
-            <td className="table-post">{this.roundNumber(post.cost)} SEK</td>
+            <td className="table-post">{Posts.roundNumber(post.cost)} SEK</td>
         </tr>
     ));
       const shipmentInfo = this.props.shipmentinfo.map(ship => (
           <tr key={ship.id_shipment}>
               <td className="table-post"><div>&nbsp;</div></td>
-              <td className="table-post">{this.roundNumber(ship.total_weight)} Kg</td>
+              <td className="table-post">{Posts.roundNumber(ship.total_weight)} Kg</td>
               <td className="table-post"><div>&nbsp;</div></td>
-              <td className="table-post">{this.roundNumber(ship.total_cost)} SEK</td>
+              <td className="table-post">{Posts.roundNumber(ship.total_cost)} SEK</td>
           </tr>
       ));
     return (
@@ -64,7 +61,7 @@ class Posts extends Component {
 Posts.propTypes = {
     fetchPosts: PropTypes.func.isRequired,
     fetchShipment: PropTypes.func.isRequired,
-  posts: PropTypes.array.isRequired,
+    posts: PropTypes.array.isRequired,
     shipmentinfo: PropTypes.array.isRequired,
   newPost: PropTypes.object
 };

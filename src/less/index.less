@@ -8,9 +8,11 @@
 @light-grey: #EEEEEE;
 @background-color: #F4F7F6;
 
+// Sizes
 @header-height: 50px;
 
-.main-font{
+// Text
+.main-font {
   font-family: HelveticaNeue-Medium, Helvetica, Arial, sans-serif;
 }
 
@@ -22,29 +24,32 @@ body:extend(.main-font) {
   background: @background-color;
   overflow-x: hidden;
 }
-.btn{
+
+.btn {
   border: 0 solid;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 5px;
   box-shadow: none;
-  &:active{
+  &:active {
     outline: none;
   }
-  &:focus{
+  &:focus {
     outline: none;
   }
 }
-.btn-form{
+
+.btn-form {
   .btn;
   height: 2.5em;
   width: 5em;
   background: @prime-green;
   font-weight: bold;
-  &:active{
+  &:active {
     background: lighten(@prime-green, 25%);
   }
 }
+
 .navbar {
   align-items: center;
   background: @prime-green;
@@ -68,23 +73,28 @@ body:extend(.main-font) {
     }
   }
 }
+
 .navbar-nav {
   display: flex;
   margin-left: 5px;
 }
+
 .component-wrapper {
   margin-left: 25px;
   margin-top: @header-height;
 }
+
 .hidden {
-  display:none;
+  display: none;
 }
+
 .error {
   color: @error-red;
-  display:block;
+  display: block;
   font-size: 12px;
   font-weight: bold;
 }
+
 .tg {
   border-collapse: collapse;
   border-spacing: 0;
