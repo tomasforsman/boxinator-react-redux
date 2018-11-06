@@ -1,0 +1,118 @@
+// Colors
+@black: #000000;
+@prime-purple: #521751;
+@prime-green: #3faf2a;
+@light-green: #A8EAA2;
+@error-red: #F44E00;
+@dark-grey: #4A4A4A;
+@light-grey: #EEEEEE;
+@background-color: #F4F7F6;
+
+@header-height: 50px;
+
+.main-font{
+  font-family: HelveticaNeue-Medium, Helvetica, Arial, sans-serif;
+}
+
+body:extend(.main-font) {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0px;
+  padding: 0;
+  background: @background-color;
+  overflow-x: hidden;
+}
+.btn{
+  border: 0 solid;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 5px;
+  box-shadow: none;
+  &:active{
+    outline: none;
+  }
+  &:focus{
+    outline: none;
+  }
+}
+.btn-form{
+  .btn;
+  height: 2.5em;
+  width: 5em;
+  background: @prime-green;
+  font-weight: bold;
+  &:active{
+    background: lighten(@prime-green, 25%);
+  }
+}
+.navbar {
+  align-items: center;
+  background: @prime-green;
+  display: flex;
+  height: @header-height;
+  left: 0;
+  margin: 0px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  a {
+    color: white;
+    font-size: 1.5rem;
+    padding: 0 1.5rem;
+    text-decoration: none;
+    &:hover {
+      color: lighten(@prime-green, 50%);
+    }
+    &:active {
+      color: @light-grey;
+    }
+  }
+}
+.navbar-nav {
+  display: flex;
+  margin-left: 5px;
+}
+.component-wrapper {
+  margin-left: 25px;
+  margin-top: @header-height;
+}
+.hidden {
+  display:none;
+}
+.error {
+  color: @error-red;
+  display:block;
+  font-size: 12px;
+  font-weight: bold;
+}
+.tg {
+  border-collapse: collapse;
+  border-spacing: 0;
+  td {
+    border: 1px solid @black;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+  }
+  th {
+    border: 2px solid @black;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+  }
+  .table-heading:extend(.main-font) {
+    background-color: @dark-grey;
+    color: aliceblue;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: top;
+  }
+  .table-post:extend(.main-font) {
+    background-color: @light-grey;
+    font-size: 18px;
+    text-align: left;
+    vertical-align: top;
+  }
+}
