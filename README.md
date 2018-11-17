@@ -2,6 +2,11 @@
 
 Coded in Node 11.0.0 React Redux with less.
 
+Uses REDUX DEVTOOLS EXTENSION during development.
+https://github.com/zalmoxisus/redux-devtools-extension
+
+
+
 -----------------------------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
